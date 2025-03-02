@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DailyCode's Main Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/card.css">
+    <script src="https://kit.fontawesome.com/ed35c27e2a.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="../static/css/_accordion.css">
+    <link rel="stylesheet" href="../static/css/_variables.css">
+    <link rel="stylesheet" href="../static/css/_transitions.css"> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionHeaders = document.querySelectorAll(".info");
+        const accordionContents = document.querySelectorAll(".challenge-description");
+    
+        accordionHeaders.forEach((header) => {
+            header.addEventListener("click", () => {
+                const accordionItem = header.parentElement;
+                const accordionContent = accordionItem.querySelector(".challenge-description");
+    
+                // Close all other accordion contents
+                accordionContents.forEach((content) => {
+                    if (content !== accordionContent) {
+                        content.classList.remove("active");
+                        content.style.maxHeight = "0";
+                    }
+                });
+    
+                // Toggle the clicked one
+                accordionContent.classList.toggle("active");
+    
+                if (accordionContent.classList.contains("active")) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                } else {
+                    accordionContent.style.maxHeight = "0";
+                }
+            });
+        });
+    });
+    
+
+      let counter = 0;
+
+      function updateCounter() {
+        document.querySelector(".vote_counter").innerHTML = counter;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelector(".upvote")
+          .addEventListener("click", function () {
+            counter++;
+            updateCounter();
+          });
+
+        document
+          .querySelector(".downvote")
+          .addEventListener("click", function () {
+            counter--;
+            updateCounter();
+          });
+      });
+    </script>
+</head>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main.html">DailyCode</a>
+    </div>
+  </nav>
+<body>
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+            <h1>Today's Challenge</h1>
+            <p style="text-align: left;">Create a program that simulates or represents an ecosystem in any way you imagine. It could be a simple text-based environment where creatures interact, a graphical simulation of plants growing and animals moving, or even an abstract system of particles influencing each other. The ecosystem could evolve over time, respond to user input, or be completely autonomous. There are no strict rules—interpret "ecosystem" however you like, whether it's biological, mechanical, digital, or entirely fictional. Let your creativity shape how your world functions and unfolds.</p>
+            <!-- upload project link -->
+          <div class="project-submission-form">
+            <div class="input-group mb-3">            
+              <input type="text" aria-label="username" class="form-control" placeholder="Username" id="username">
+              <input type="text" aria-label="project name" class="form-control" placeholder="Project Name" id="projectName">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Upload project repository</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="https://github.com/username/repo" id="repo">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Upload project demo</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="https://my-supercool-demo" id="demo">
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Project Description" style="height: 100px" id="description"></textarea>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto" style="padding-top: 10px;">
+              <button class="btn btn-primary" type="button" onclick="createPost()">Submit</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2>Leaderboard</h2>
+          <div class="leaderboard">
+            <div class="entry">
+              <div class="info">
+                <span class="name">Person A</span>
+                <span class="score">100</span>
+              </div>
+              <div class="challenge-description active" style="text-align: left;">
+                      <h5>Reverse a String</h5>
+                      <p>Write a function that takes a string as input and returns the string reversed. Avoid using built-in reverse functions.</p>
+              </div>
+            </div>
+            <div class="entry">
+              <div class="info">
+                        <span class="name">Person B</span>
+                        <span class="score">100</span>
+              </div>
+              <div class="challenge-description" style="text-align: left;">
+                        <h5>Find the Missing Number</h5>
+                        <p>Given an array containing n distinct numbers taken from 0 to n, find the missing number in the sequence.</p>
+              </div>
+            </div>
+            <div class="entry">
+              <div class="info">
+                        <span class="name">Person C</span>
+                        <span class="score">100</span>
+              </div>
+              <div class="challenge-description" style="text-align: left;">
+                        <h5>FizzBuzz</h5>
+                        <p>Print numbers from 1 to 100. For multiples of 3, print “Fizz” instead of the number. For multiples of 5, print “Buzz.” For numbers that are multiples of both 3 and 5, print “FizzBuzz.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="display-projects" id="projectDisplay">
+          
+      </div>
+    </div>
+<script src="mainPage.js"></script>
+</body>
+<footer>
+  <div class="footerBottom">
+    <p>Copyright &copy;2025; Designed by <span class="designer">Blueprint Team</span> with &lt;3 </p>
+  </div>
+</footer>
+</footer>
+</html>

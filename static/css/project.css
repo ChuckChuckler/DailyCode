@@ -1,0 +1,48 @@
+.body{
+  padding: 30px;
+}
+
+
+.project-start {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%; /* Ensures it spans the full width */
+  }
+
+  
+  .project-info {
+    display: flex;
+    color: white;
+    align-items: end;
+    gap: 10px; /* Adjust spacing between title and username */
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust size as needed */
+  }
+  
+  .repo-link {
+    color: #0366d6; /* GitHub's link color */
+    font-weight: bold;
+  }
+  
+  #projectDesc {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 10px; /* Space between vote container and text */
+  }
+  
+  .votContainer {
+    display: flex;
+    flex-direction: column; /* Stack upvote, count, and downvote vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+footer{
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}

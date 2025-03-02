@@ -1,0 +1,49 @@
+/* <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-body-secondary">Last updated 3 mins ago</small>
+                </div>
+              </div>
+</div> */
+
+.card {
+    word-wrap: break-word;
+}
+
+.card-body {
+    min-height: 1px;
+    padding: 1.25rem;
+    background-color: white;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    color: black;
+}
+
+.card-text {
+    margin-bottom: 0;
+    color: black;
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, .125);
+    background-color: rgb(236, 236, 236);
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}

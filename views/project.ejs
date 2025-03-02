@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/project.css">
+    <!-- <link rel="stylesheet" href="../static/css/_accordion.css">
+    <link rel="stylesheet" href="../static/css/_variables.css">
+    <link rel="stylesheet" href="../static/css/_transitions.css"> -->
+    <script src="https://kit.fontawesome.com/ed35c27e2a.js" crossorigin="anonymous"></script>
+   </head>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">DailyCode</a>
+    </div>
+  </nav>
+<body>
+  <div class="body">
+  <div class="project-start">
+    <div class="project-info">
+      <h1 id="projectName">Project 1</h1>
+      <span id="username">by [github username]</span>
+    </div>
+    <div class="links">
+      <a id="projectRepo" href="https://github.com/plasta0728/" class="repo-link">GitHub Repo</a> / 
+      <a id="projectDemo" href="https://github.com/plasta0728/" class="repo-link">Demo</a>
+    </div>
+  </div>
+  <h5 id="creationTime">Created at</h5>
+<div id="projectDesc" class="project-description">
+  <div class="votContainer">
+    <div class="upbutton" onclick="updateUpvotes('up')">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    <div class="vot" id="upvotes">0</div>
+    <div class="downbutton" onclick="updateUpvotes('down')">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+<p id="projectDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+</div>
+
+<script src="project.js"></script>
+<script>
+    const projectData = {
+        username: "<%= username %>",
+        projectName: "<%= projectName %>",
+        projectDesc: "<%= projectDesc %>",
+        creationTime: "<%= creationTime %>",
+        projectRepo: "<%= projectRepo %>",
+        projectDemo: "<%= projectDemo %>",
+        upvoteNum: <%- JSON.stringify(upvoteNum) %>
+    }
+    window.onload = function(){
+        setup(projectData.username, projectData.projectName, projectData.projectDesc, projectData.creationTime, projectData.projectRepo, projectData.projectDemo, projectData.upvoteNum);
+    }
+</script>
+</body>
+<footer>
+  <hr />
+  <div class="footerBottom">
+    <p>
+      Copyright &copy;2025; Designed by <span class="designer">Blueprint Team</span> with &lt;3
+    </p>
+  </div>
+</footer>
+</html>

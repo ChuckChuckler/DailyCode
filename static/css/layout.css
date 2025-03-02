@@ -1,0 +1,34 @@
+body {
+  background-color: black;
+}
+
+h1, h2, h3, h5, p, span {
+  color: white;
+}
+
+footer {
+  text-align: center;
+}
+
+.votContainer {
+  color: rgb(200, 200, 200);
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.votContainer div {
+  margin: 1px;
+  font-size: 12px;
+}
+
+.votContainer div:hover {
+  color: white;
+}
+
+/*# sourceMappingURL=layout.css.map */
+
+
